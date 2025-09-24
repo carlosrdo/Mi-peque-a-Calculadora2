@@ -1,78 +1,151 @@
-
 body {
-    background-color: #d3d3d3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
+  background: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
+/* Cuerpo calculadora */
 .calculator {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    width: 350px;
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  width: 340px;
 }
 
-.display-container {
-    background-color: #c8d4c8;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+/* Pantalla */
+.screen {
+  background: #c8e6c9;
+  border: 3px solid #111;
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.operation {
+  font-size: 14px;
+  color: #333;
+  min-height: 20px;
 }
 
 #display {
-    width: 100%;
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    color: #3b3f3b;
-    text-align: right;
-    font-family: 'Orbitron', sans-serif; /* A digital-style font */
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  text-align: right;
+  color: #000;
+  outline: none;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+/* Info */
+#info {
+  background: #444;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  margin: 8px 0 15px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
+/* Zona de botones */
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.main-grid {
+  display: flex;
+  gap: 10px;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  flex: 3;
+}
+
+.ops {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 6px;
+  flex: 1;
+}
+
+.igual {
+  grid-row: span 2;
+}
+
+.csv-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+/* Estilo botones */
 button {
-    padding: 15px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #5f5f5f;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    transition: background-color 0.2s, transform 0.1s;
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
 button:active {
-    transform: translateY(2px);
-    box-shadow: none;
+  transform: scale(0.95);
+  box-shadow: inset 0px 2px 6px rgba(0,0,0,0.3);
 }
 
-.function-button {
-    background-color: #4a4a4a;
+/* Colores */
+.num {
+  background: #e0e0e0;
 }
 
-.operator-button, .equals-button {
-    background-color: #0052d4;
+#suma, #resta, #multiplicacion, #division {
+  background: #ff9800;
+  color: #fff;
 }
 
-.ac-button {
-    background-color: #d9534f;
+#igual {
+  background: #f44336;
+  color: #fff;
 }
 
-.number-button {
-    background-color: #7a7a7a;
+#clear {
+  background: #9e9e9e;
+  color: #fff;
 }
 
-button:hover {
-    filter: brightness(1.2);
+#cuadrado, #raiz, #modulo, #factorial, #potencia,
+#csv-sumatorio, #csv-media, #csv-ordenar, #csv-revertir,
+#csv-quitar, #descargar-log {
+  background: #2196f3;
+  color: #fff;
+}
+
+#sign, #decimal, #comma {
+  background: #bdbdbd;
+}
+
+.cero {
+  grid-column: span 2;
+}
+
+.active-press {
+  outline: 2px solid yellow;
 }

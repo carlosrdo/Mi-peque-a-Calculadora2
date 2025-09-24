@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Científica Estilo Casio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora TI-30X IIS</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-    <div class="calculator">
-        <div class="display-container">
-            <input type="text" id="display" readonly>
-        </div>
-        <div class="buttons">
-            <button class="function-button" onclick="shift()">Shift</button>
-            <button class="function-button" onclick="alpha()">Alpha</button>
-            <button class="function-button" onclick="trig('sin')">sin</button>
-            <button class="function-button" onclick="trig('cos')">cos</button>
-            <button class="function-button" onclick="trig('tan')">tan</button>
+  <div class="calculator">
 
-            <button class="function-button" onclick="logarithm('log')">log</button>
-            <button class="function-button" onclick="logarithm('ln')">ln</button>
-            <button class="number-button" onclick="appendToDisplay('(')">(</button>
-            <button class="number-button" onclick="appendToDisplay(')')">)</button>
-            <button class="function-button" onclick="power('2')">x²</button>
-
-            <button class="number-button" onclick="appendToDisplay('7')">7</button>
-            <button class="number-button" onclick="appendToDisplay('8')">8</button>
-            <button class="number-button" onclick="appendToDisplay('9')">9</button>
-            <button class="operator-button" onclick="deleteLast()">DEL</button>
-            <button class="ac-button" onclick="clearDisplay()">AC</button>
-
-            <button class="number-button" onclick="appendToDisplay('4')">4</button>
-            <button class="number-button" onclick="appendToDisplay('5')">5</button>
-            <button class="number-button" onclick="appendToDisplay('6')">6</button>
-            <button class="operator-button" onclick="appendToDisplay('*')">×</button>
-            <button class="operator-button" onclick="appendToDisplay('/')">÷</button>
-
-            <button class="number-button" onclick="appendToDisplay('1')">1</button>
-            <button class="number-button" onclick="appendToDisplay('2')">2</button>
-            <button class="number-button" onclick="appendToDisplay('3')">3</button>
-            <button class="operator-button" onclick="appendToDisplay('+')">+</button>
-            <button class="operator-button" onclick="appendToDisplay('-')">-</button>
-
-            <button class="number-button" onclick="appendToDisplay('0')">0</button>
-            <button class="number-button" onclick="appendToDisplay('.')">.</button>
-            <button class="function-button" onclick="power('10')">10^x</button>
-            <button class="function-button" onclick="answer()">Ans</button>
-            <button class="equals-button" onclick="calculate()">=</button>
-        </div>
+    <!-- Pantalla doble -->
+    <div class="screen">
+      <div id="operation" class="operation">0</div>
+      <input type="text" id="display" value="0">
     </div>
-    <script src="calculator.js"></script>
+
+    <!-- Info -->
+    <h2 id="info" class="grande" title="Info sobre el número">
+      Info sobre el número
+    </h2>
+
+    <!-- Zona de botones -->
+    <div class="keypad">
+
+      <!-- Funciones -->
+      <div class="row">
+        <button id="cuadrado">x²</button>
+        <button id="raiz">√x</button>
+        <button id="modulo">mod</button>
+        <button id="factorial">x!</button>
+        <button id="potencia">xʸ</button>
+      </div>
+
+      <!-- Bloque central -->
+      <div class="main-grid">
+        <!-- Números -->
+        <div class="numbers">
+          <button class="num">7</button>
+          <button class="num">8</button>
+          <button class="num">9</button>
+          <button class="num">4</button>
+          <button class="num">5</button>
+          <button class="num">6</button>
+          <button class="num">1</button>
+          <button class="num">2</button>
+          <button class="num">3</button>
+          <button class="num cero">0</button>
+          <button id="decimal">.</button>
+          <button id="comma">,</button>
+          <button id="sign">±</button>
+        </div>
+
+        <!-- Operaciones -->
+        <div class="ops">
+          <button id="suma">+</button>
+          <button id="resta">-</button>
+          <button id="multiplicacion">×</button>
+          <button id="division">÷</button>
+          <button id="clear">C</button>
+          <button id="igual" class="igual">=</button>
+        </div>
+      </div>
+
+      <!-- Bloque CSV -->
+      <div class="csv-block">
+        <button id="csv-sumatorio">Σ CSV</button>
+        <button id="csv-media">Media CSV</button>
+        <button id="csv-ordenar">Ordenar CSV</button>
+        <button id="csv-revertir">Revertir CSV</button>
+        <button id="csv-quitar">Quitar CSV</button>
+        <button id="descargar-log">Descargar Logs</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
